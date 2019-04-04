@@ -1,0 +1,208 @@
+
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R è un software libero ed è rilasciato SENZA ALCUNA GARANZIA.
+Siamo ben lieti se potrai redistribuirlo, ma sotto certe condizioni.
+Scrivi 'license()' o 'licence()' per dettagli su come distribuirlo.
+
+R è un progetto di collaborazione con molti contributi esterni.
+Scrivi 'contributors()' per maggiori informazioni e 'citation()'
+per sapere come citare R o i pacchetti di R nelle pubblicazioni.
+
+Scrivi 'demo()' per una dimostrazione, 'help()' per la guida in linea, o
+'help.start()' per l'help navigabile con browser HTML.
+Scrivi 'q()' per uscire da R.
+
+[R.app GUI 1.70 (7521) x86_64-apple-darwin15.6.0]
+
+[Workspace restored from /Users/federicaangius/.RData]
+[History restored from /Users/federicaangius/.Rapp.history]
+
+> library(reshape2)
+> library(ggplot2)
+Need help? Try Stackoverflow: https://stackoverflow.com/tags/ggplot2.
+> library(tidyverse)
+── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+✔ tibble  1.4.2     ✔ purrr   0.2.5
+✔ tidyr   0.8.1     ✔ dplyr   0.7.7
+✔ readr   1.1.1     ✔ stringr 1.3.1
+✔ tibble  1.4.2     ✔ forcats 0.3.0
+── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+> x <-matrix(c("99.59","2.66","94.2","7.17"), nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy"))
++ q
+Errore: unexpected symbol in:
+"x <-matrix(c("99.59","2.66","94.2","7.17"), nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy"))
+q"
+> x <-matrix("99.59","2.66","94.2","7.17", nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy"))
++ c
+Errore: unexpected symbol in:
+"x <-matrix("99.59","2.66","94.2","7.17", nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy"))
+c"
+> x <-matrix("99.59","2.66","94.2","7.17", nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy")))
+Error in matrix("99.59", "2.66", "94.2", "7.17", nrow = 2, dimnames = list(c("Bin_1",  : 
+  unused argument ("7.17")
+> x <-matrix(c(99.59, 2.66, 94.2, 7.17), nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy")))
+> x
+       completeness redundacy
+Bin_1         99.59     94.20
+Bin_22         2.66      7.17
+> x <-matrix(c(99.59, 94.2, 2.66, 7.17), nrow = 2, dimnames = list(c("Bin_1","Bin_22"), c("completeness","redundacy")))
+> x
+       completeness redundacy
+Bin_1         99.59      2.66
+Bin_22        94.20      7.17
+> ggplot(x, aes(x = redundacy, y = completeness)) + geom_point()
+Errore: `data` must be a data frame, or other object coercible by `fortify()`, not a numeric vector
+> B <- as.factor(x)
+> x
+       completeness redundacy
+Bin_1         99.59      2.66
+Bin_22        94.20      7.17
+> B
+[1] 99.59 94.2  2.66  7.17 
+Levels: 2.66 7.17 94.2 99.59
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point()
+Errore: `data` must be a data frame, or other object coercible by `fortify()`, not a factor
+> B + col.names(c("completeness","redundacy")), row.names(c("Bin_1", "Bin_22"))
+Errore: unexpected ',' in "B + col.names(c("completeness","redundacy")),"
+> library(devtools)
+Error in library(devtools) : there is no package called ‘devtools’
+> install.packages("devtools")
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘ini’, ‘desc’, ‘prettyunits’, ‘xopen’, ‘clisymbols’, ‘gh’, ‘git2r’, ‘memoise’, ‘pkgbuild’, ‘pkgload’, ‘rcmdcheck’, ‘remotes’, ‘sessioninfo’, ‘usethis’
+
+
+  There is a binary version available but the source version is later:
+         binary source needs_compilation
+devtools 1.13.6  2.0.1             FALSE
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/ini_0.3.1.tgz'
+Content type 'application/octet-stream' length 13069 bytes (12 KB)
+==================================================
+downloaded 12 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/desc_1.2.0.tgz'
+Content type 'application/octet-stream' length 273672 bytes (267 KB)
+==================================================
+downloaded 267 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/prettyunits_1.0.2.tgz'
+Content type 'application/octet-stream' length 29705 bytes (29 KB)
+==================================================
+downloaded 29 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/xopen_1.0.0.tgz'
+Content type 'application/octet-stream' length 22252 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/clisymbols_1.2.0.tgz'
+Content type 'application/octet-stream' length 17806 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/gh_1.0.1.tgz'
+Content type 'application/octet-stream' length 47850 bytes (46 KB)
+==================================================
+downloaded 46 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/git2r_0.23.0.tgz'
+Content type 'application/octet-stream' length 2034128 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/memoise_1.1.0.tgz'
+Content type 'application/octet-stream' length 34767 bytes (33 KB)
+==================================================
+downloaded 33 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/pkgbuild_1.0.2.tgz'
+Content type 'application/octet-stream' length 126355 bytes (123 KB)
+==================================================
+downloaded 123 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/pkgload_1.0.2.tgz'
+Content type 'application/octet-stream' length 142722 bytes (139 KB)
+==================================================
+downloaded 139 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/rcmdcheck_1.3.0.tgz'
+Content type 'application/octet-stream' length 1485108 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/remotes_2.0.2.tgz'
+Content type 'application/octet-stream' length 270240 bytes (263 KB)
+==================================================
+downloaded 263 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/sessioninfo_1.1.0.tgz'
+Content type 'application/octet-stream' length 42148 bytes (41 KB)
+==================================================
+downloaded 41 KB
+
+provo con l'URL 'https://cran.stat.unipd.it/bin/macosx/el-capitan/contrib/3.5/usethis_1.4.0.tgz'
+Content type 'application/octet-stream' length 511242 bytes (499 KB)
+==================================================
+downloaded 499 KB
+
+
+The downloaded binary packages are in
+	/var/folders/05/_3tvxqn547lf_vqkkbz_yzzc0000gn/T//RtmpHRJcep/downloaded_packages
+installing the source package ‘devtools’
+
+provo con l'URL 'https://cran.stat.unipd.it/src/contrib/devtools_2.0.1.tar.gz'
+Content type 'application/octet-stream' length 388953 bytes (379 KB)
+==================================================
+downloaded 379 KB
+
+* installing *source* package ‘devtools’ ...
+** package ‘devtools’ successfully unpacked and MD5 sums checked
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (devtools)
+
+The downloaded source packages are in
+	‘/private/var/folders/05/_3tvxqn547lf_vqkkbz_yzzc0000gn/T/RtmpHRJcep/downloaded_packages’
+> library(devtools)
+> install_github("easyGgplot2", "kassambara")
+Error in parse_repo_spec(repo) : 
+  Invalid git repo specification: 'easyGgplot2'
+> ggplot2.scatterplot(data=x, xName = 'redundacy', yName = 'completeness')
+Error in ggplot2.scatterplot(data = x, xName = "redundacy", yName = "completeness") : 
+  non trovo la funzione "ggplot2.scatterplot"
+> ggplot(data=x, xName = 'redundacy', yName = 'completeness')
+Errore: `data` must be a data frame, or other object coercible by `fortify()`, not a numeric vector
+> B <- data.frame(x)
+> B
+       completeness redundacy
+Bin_1         99.59      2.66
+Bin_22        94.20      7.17
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point()
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point(size=2, shape=23)
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point(size=4)
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point(size=4) + theme_classic()
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point(size=4) + theme_classic() + scale_color_manual(value=c("red", "blue"))
+Error in manual_scale(aesthetics, values, ...) : 
+  l'argomento "values"  non è specificato e non ha un valore predefinito
+> ggplot(B, aes(x = redundacy, y = completeness)) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue"))
+> ggplot(B, aes(x = redundacy, y = completeness, color=c("Bin_1", "Bin_22"))) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue"))
+> ggplot(B, aes(x = redundacy, y = completeness, color=Bin_1, Bin_22)) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue"))
+Error in FUN(X[[i]], ...) : oggetto "Bin_1" non trovato
+> ggplot(B, aes(x = redundacy, y = completeness, color="Bin_1", "Bin_22")) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue"))
+> ggplot(B, aes(x = redundacy, y = completeness, color=c("Bin_1", "Bin_22"))) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue"))
+> ggplot(B, aes(x = redundacy, y = completeness, color=c("Bin_1", "Bin_22"))) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue")) + theme(legend.position="none")
+> ggplot(B, aes(x = redundacy, y = completeness, color=c("Bin_1", "Bin_22"))) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue")) + theme(legend.position="none") + coord_cartesian(xlim=c(0,10), ylim=c(80,100))
+> ggplot(B, aes(x = redundacy, y = completeness, color=c("Bin_1", "Bin_22"))) + geom_point(size=4) + theme_classic() + scale_color_manual(values=c("red", "blue")) + theme(legend.position="none") + coord_cartesian(xlim=c(0,10), ylim=c(0,100))
+> 
